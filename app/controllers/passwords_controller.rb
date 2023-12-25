@@ -5,9 +5,12 @@ class PasswordsController < ApplicationController
   end
 
   def update
-    if Current.user.update(password_params)
-      redirect_to root_path, flash[:notice] ="User password updated"
+
+    if Current.user.update(password_params)      
+      redirect_to log_in_path
+      flash[:notice] ="User password updated"
     else
+      flash[:notice] ="Password not updated"
       render 'edit'
     end
   end

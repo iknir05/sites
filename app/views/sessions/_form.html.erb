@@ -1,5 +1,5 @@
 <div class="form-group">
-  <%= form_with model: @user,url: sessions_path,local: true do |form| %>   
+  <%= form_with model: @user,url: sign_up_path,local: true do |form| %>   
     <p>
       <strong><%= form.label :first_name %><br></strong>
       <%= form.text_field :first_name,:class => "form-control" %>

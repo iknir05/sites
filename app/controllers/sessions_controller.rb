@@ -8,8 +8,9 @@ class SessionsController < ApplicationController
 		if @user.save
 	        flash[:notice] = "User successfully created"
 	        session[:user_id] = @user.id
-	        redirect_to '/login'
+	        redirect_to 'sign_in'
      	else
+     		flash[:notice] = "Invalid credentials"
         	render 'new'
      	end
 	end

@@ -19,6 +19,7 @@
     <% if flash[:notice] %>
       <div class="alert alert-success alert-dismissible fade show"><%= flash[:notice] %></div>
     <% end %>
+    <%= render 'layouts/navbar' %>
     <%= yield %>
   </body>
 </html>

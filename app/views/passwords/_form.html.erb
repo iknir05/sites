@@ -1,0 +1,32 @@
+<div class="form-group">
+  <%= form_with model: Current.user, url: edit_password_path,local: true do |form| %>  
+    <p>
+      <strong><%= form.label :password %><br></strong>
+      <%= form.text_field :password,:class => "form-control"%>
+      <% if Current.user.errors.any? %>
+        <div id="error_explanation" >
+          <ul class="field_with_errors">
+            <% Current.user.errors.full_messages_for(:password).each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+    </p>   
+    <p>
+      <strong><%= form.label :confirm_password %><br></strong>
+      <%= form.text_field :confirm_password,:class => "form-control"%>
+      <% if Current.user.errors.any? %>
+        <div id="error_explanation" >
+          <ul class="field_with_errors">
+            <% Current.user.errors.full_messages_for(:confirm_password).each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+      <br>
+    </p>   
+    <%= form.submit value="Update Password"%>
+  <% end %>
+</div>
