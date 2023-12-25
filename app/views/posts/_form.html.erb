@@ -1,0 +1,49 @@
+<div class="form-group">
+  <%= form_with model: @post, local: true do |form| %>   
+    <p>
+      <strong><%= form.label :title %><br></strong>
+      <%= form.text_field :title,:class => "form-control" %>
+      <% if @post.errors.any? %>
+      <div id="error_explanation" >
+        <ul class="field_with_errors">
+          <% @post.errors.full_messages_for(:title).each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+    </p>
+   
+    <p>
+      <strong><%= form.label :description %><br></strong>
+      <%= form.text_area :description,:class => "form-control"%>
+      <% if @post.errors.any? %>
+      <div id="error_explanation" >
+        <ul class="field_with_errors">
+          <% @post.errors.full_messages_for(:description).each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+    </p>
+
+     <p>
+      <strong><%= form.label :reaction %><br></strong>
+      <%= form.text_field :reaction,:class => "form-control"%>
+      <% if @post.errors.any? %>
+        <div id="error_explanation" >
+          <ul class="field_with_errors">
+            <% @post.errors.full_messages_for(:reaction).each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+    </p>
+   
+    <p>
+      <%= form.submit%>
+    </p>   
+  <% end %>
+</div>

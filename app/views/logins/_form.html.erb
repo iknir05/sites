@@ -1,0 +1,32 @@
+<div class="form-group">
+  <%= form_with model: @user, url: check_login_path,local: true do |form| %>   
+    <p>
+      <strong><%= form.label :email %><br></strong>
+      <%= form.email_field :email,:class => "form-control"%>
+      <% if @user.errors.any? %>
+      <div id="error_explanation" >
+        <ul class="field_with_errors">
+          <% @user.errors.full_messages_for(:email).each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+    </p>
+    <p>
+      <strong><%= form.label :password %><br></strong>
+      <%= form.text_field :password,:class => "form-control"%>
+      <% if @user.errors.any? %>
+        <div id="error_explanation" >
+          <ul class="field_with_errors">
+            <% @user.errors.full_messages_for(:password).each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+      <br>
+      <%= form.submit value="Login"%>
+    </p>   
+  <% end %>
+</div>

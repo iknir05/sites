@@ -1,0 +1,110 @@
+<div class="form-group">
+  <%= form_with model: @user,url: sessions_path,local: true do |form| %>   
+    <p>
+      <strong><%= form.label :first_name %><br></strong>
+      <%= form.text_field :first_name,:class => "form-control" %>
+      <% if @user.errors.any? %>
+        <div id="error_explanation" >
+          <ul class="field_with_errors">
+            <% @user.errors.full_messages_for(:first_name).each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+    </p>
+    <p>
+      <strong><%= form.label :last_name %><br></strong>
+      <%= form.text_field :last_name,:class => "form-control" %>
+      <% if @user.errors.any? %>
+        <div id="error_explanation" >
+          <ul class="field_with_errors">
+            <% @user.errors.full_messages_for(:last_name).each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+    </p>
+    <p>
+      <strong><%= form.label :email %><br></strong>
+      <%= form.email_field :email,:class => "form-control"%>
+      <% if @user.errors.any? %>
+      <div id="error_explanation" >
+        <ul class="field_with_errors">
+          <% @user.errors.full_messages_for(:email).each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+    </p>
+
+    <p>
+      <strong><%= form.label :phone_number %><br></strong>
+      <%= form.text_field :phone_number,:class => "form-control"%>
+      <% if @user.errors.any? %>
+        <div id="error_explanation" >
+          <ul class="field_with_errors">
+            <% @user.errors.full_messages_for(:phone_number).each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+    </p>
+
+    <p>
+      <strong><%= form.label :gender %><br></strong>
+      <%#= form.text_field :gender,:class => "form-control"%>
+      <%= form.radio_button :gender, "male" %>
+      <%= form.label :gender_male, "Male" %>
+      <%= form.radio_button :gender, "female" %>
+      <%= form.label :gender_female, "Female" %>
+    
+      <% if @user.errors.any? %>
+        <div id="error_explanation" >
+          <ul class="field_with_errors">
+            <% @user.errors.full_messages_for(:gender).each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+    </p>
+    <p>
+      <strong><%= form.label :password %><br></strong>
+      <%= form.text_field :password,:class => "form-control"%>
+      <% if @user.errors.any? %>
+        <div id="error_explanation" >
+          <ul class="field_with_errors">
+            <% @user.errors.full_messages_for(:password).each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+    <p>
+      <strong><%= form.label :confirm_password %><br></strong>
+      <%= form.text_field :confirm_password,:class => "form-control"%>
+      <% if @user.errors.any? %>
+        <div id="error_explanation" >
+          <ul class="field_with_errors">
+            <% @user.errors.full_messages_for(:confirm_password).each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+    </p>
+
+
+   
+   
+
+    <p>
+      <%= form.submit%>
+    </p>   
+  <% end %>
+</div>

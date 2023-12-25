@@ -1,0 +1,36 @@
+<div class="container">
+   <%= image_tag("image6.jpg", alt: 'Description', :size => "1108x180")%>
+   <h1 class="jumbotron text-center" style="background-image: url('image6.jpg'); background-size: 100% 100%;">Welcome to Sites World!!!</h1>
+  <%= link_to 'Log Out', login_path,:class => "btn btn-info" %>
+  <%= link_to 'New Post', new_post_path,:class => "btn btn-info" %>
+  <br>
+  <br>
+  <table class="table table-dark table-striped">
+    <tr>
+      <th>Title</th>
+      <th>Text</th>
+      <th>Reaction</th>
+      <th colspan="3">Action List</th>
+    </tr>
+   
+    <% @posts.each do |post| %>
+      <tr>
+        <td><strong><%= post.title %></strong></td>
+        <td><%= post.description %></td>
+        <td><%= post.reaction %></td>
+        <td><%= link_to 'Show', post_path(post),:class => "btn btn-info"%></td>
+        <td><%= link_to 'Edit', edit_post_path(post),:class => "btn btn-info"%></td>
+        <td><%= link_to 'Destroy', post_path(post),
+                method: :delete,
+                data: { confirm: 'Are you sure?' },:class => "btn btn-info" %>                
+            <%# <%= button_to 'Sign Out', post_path(post), method: :delete %>
+            <%# <%= link_to 'Sign Out111', post_path(post), data: {turbo_method: :delete} %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+
+  <footer class="footer fixed-bottom text-center">
+    @copyright: iknir
+  </footer>
+</div>
