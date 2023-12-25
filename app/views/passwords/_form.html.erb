@@ -2,7 +2,7 @@
   <%= form_with model: Current.user, url: edit_password_path,local: true do |form| %>  
     <p>
       <strong><%= form.label :password %><br></strong>
-      <%= form.text_field :password,:class => "form-control"%>
+      <%= form.password_field :password,:class => "form-control"%>
       <% if Current.user.errors.any? %>
         <div id="error_explanation" >
           <ul class="field_with_errors">
@@ -15,7 +15,7 @@
     </p>   
     <p>
       <strong><%= form.label :confirm_password %><br></strong>
-      <%= form.text_field :confirm_password,:class => "form-control"%>
+      <%= form.password_field :confirm_password,:class => "form-control"%>
       <% if Current.user.errors.any? %>
         <div id="error_explanation" >
           <ul class="field_with_errors">

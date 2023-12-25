@@ -1,16 +1,26 @@
 class SessionsController < ApplicationController
 	def new
-		@user = User.new
+		if Current.user
+			flash[:notice] = "User is already logged in!"
+		  	redirect_to home_path
+		else
+			@user = User.new	
+		end
 	end
-
+	
 	def create
 		@user = User.new(user_params)
-		if @user.save
+	
+		if @user.password == @user.confirm_password && @user.save 
 	        flash[:notice] = "User successfully created"
-	        session[:user_id] = @user.id
-	        redirect_to 'sign_in'
+	        # session[:user_id] = @user.id
+	        redirect_to '/sign_in'
      	else
-     		flash[:notice] = "Invalid credentials"
+     		if @user.password != @user.confirm_password
+     			flash[:notice] = "Entered password does not match"
+     		else
+     			flash[:notice] = "Details are not correctly filled"
+     		end
         	render 'new'
      	end
 	end

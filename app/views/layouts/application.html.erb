@@ -16,10 +16,14 @@
   </head>
 
   <body>
-    <% if flash[:notice] %>
-      <div class="alert alert-success alert-dismissible fade show"><%= flash[:notice] %></div>
-    <% end %>
     <%= render 'layouts/navbar' %>
-    <%= yield %>
+    
+    <div class="container">
+      <% if flash[:notice] %>
+        <div class="alert alert-success alert-dismissible fade show"><%= flash[:notice] %></div>
+      <% end %>
+
+      <%= yield %>
+    </div>
   </body>
 </html>

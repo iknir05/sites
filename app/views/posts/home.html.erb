@@ -1,14 +1,5 @@
-<div class="container">
-   <%= image_tag("image6.jpg", alt: 'Description', :size => "1108x180")%>
-   <h1 class="jumbotron text-center" style="background-image: url('image6.jpg'); background-size: 100% 100%;">Welcome to Sites World!!!</h1>
-  <% if Current.user %>
-    Logged in as <%=Current.user.email %><br>
-    <%= link_to 'Edit Password', edit_password_path,:class => "btn btn-info"%>
-    <%= link_to 'Log Out', logout_path,:class => "btn btn-info" %>
-   <% else %> 
-    <%= link_to 'Sign Up', sign_up_path,:class => "btn btn-info" %>
-    <%= link_to 'Log In', sign_in_path,:class => "btn btn-info" %>
-  <% end %>
+  <%= image_tag("image6.jpg", alt: 'Description', :size => "1108x180")%>
+  <h1 class="jumbotron text-center" style="background-image: url('image6.jpg'); background-size: 100% 100%;">Welcome to Sites World!!!</h1>
   
   <%= link_to 'New Post', new_post_path,:class => "btn btn-info" %>
   <br>
@@ -41,4 +32,4 @@
   <footer class="footer fixed-bottom text-center">
     @copyright: iknir
   </footer>
-</div>
+

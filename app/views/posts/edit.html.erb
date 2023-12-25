@@ -1,12 +1,9 @@
 
-<div class="container">
-	<%# <%= image_tag("image5.jpg", alt: 'Description', style:'display: block; margin: auto; height: 20%; width: 100%;'), %> 
-	<%= image_tag "image5.jpg", alt: 'desc', :size => "1108x180"%>
-	<div class="jumbotron text-center">
-		 <h1>Edit Post Page</h1>
-	</div>
+<%= image_tag "image5.jpg", alt: 'desc', :size => "1108x180"%>
+<div class="jumbotron text-center">
+	 <h1>Edit Post Page</h1>
+</div>
 
  <%= render 'form' %>
 
- <%= link_to 'Back', home_path,:class => "btn btn-info" %>
-</div>
+ <%#= link_to 'Back', home_path,:class => "btn btn-info" %>

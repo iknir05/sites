@@ -28,7 +28,7 @@
     </p>
     <p>
       <strong><%= form.label :email %><br></strong>
-      <%= form.email_field :email,:class => "form-control"%>
+      <%= form.text_field :email,:class => "form-control"%>
       <% if @user.errors.any? %>
       <div id="error_explanation" >
         <ul class="field_with_errors">
@@ -74,7 +74,7 @@
     </p>
     <p>
       <strong><%= form.label :password %><br></strong>
-      <%= form.text_field :password,:class => "form-control"%>
+      <%= form.password_field :password, :class => "form-control"%>
       <% if @user.errors.any? %>
         <div id="error_explanation" >
           <ul class="field_with_errors">
@@ -87,7 +87,7 @@
 
     <p>
       <strong><%= form.label :confirm_password %><br></strong>
-      <%= form.text_field :confirm_password,:class => "form-control"%>
+      <%= form.password_field :confirm_password,:class => "form-control"%>
       <% if @user.errors.any? %>
         <div id="error_explanation" >
           <ul class="field_with_errors">
@@ -98,11 +98,6 @@
         </div>
       <% end %>
     </p>
-
-
-   
-   
-
     <p>
       <%= form.submit%>
     </p>   

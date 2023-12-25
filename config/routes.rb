@@ -14,7 +14,7 @@
   post 'sign_up', to: 'sessions#create'
   get 'sign_in', to: 'logins#new'
   post 'sign_in', to: 'logins#create', as: 'log_in'
-  delete 'logout', to: 'logins#destroy'
+  get 'logout', to: 'logins#destroy'
   get 'password',  to: 'passwords#edit', as: 'edit_password'
   patch 'password', to: 'passwords#update'
   get 'password/reset', to: 'password_resets#new'

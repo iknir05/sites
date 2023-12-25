@@ -8,9 +8,9 @@ class PasswordsController < ApplicationController
 
     if Current.user.update(password_params)      
       redirect_to log_in_path
-      flash[:notice] ="User password updated"
+      flash[:notice] ="User password successfully updated"
     else
-      flash[:notice] ="Password not updated"
+      flash[:notice] ="Password entered is not updated"
       render 'edit'
     end
   end
